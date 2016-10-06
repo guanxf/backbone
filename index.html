@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" id="viewport" />
+	<title></title>
+	<link rel="stylesheet" href="static/modules/list/list.css">
+</head>
+<body>
+	<div id="app">
+		<section class="list">
+			<div class="header">
+				<div class="arrow-container">
+					<span class="arrow">
+						<span class="arrow green"></span>
+					</span>
+				</div>
+				<div class="login">登录</div>
+				<h1>图片搜索</h1>
+			</div>
+			<div class="search">
+				<input type="text" placeholder="搜索你想要的图片">
+				<span>搜一搜</span>
+			</div>
+			<ul class="nav clearfix">
+				<li data-id="0">宠物</li>
+				<li data-id="1">美女</li>
+				<li data-id="2">植物</li>
+				<li data-id="3">汽车</li>
+				<li data-id="4">风景</li>
+			</ul>
+			<div class="image-container">
+				<div class="left-container"></div>
+				<div class="right-container"></div>
+			</div>
+			<div class="back">返回顶部</div>
+		</section>
+
+		<section class="layer"></section>
+	</div>
+	<script type="text/template" id="tpl">
+		<div class="layer-container" style="<%=style%>">
+			<img src="<%=url%>">
+		</div>
+		<div class="header hide">
+			<div class="arrow-container">
+				<span class="arrow">
+					<span class="arrow black"></span>
+				</span>
+			</div>
+			<h1><%=title%></h1>
+		</div>
+	</script>
+	<script type="text/javascript" src='static/sea.js'></script>
+	<script type="text/javascript" src='static/lib/seajs-css.js'></script>
+	<script type="text/javascript" src='static/lib/zepto.js'></script>
+	<!-- // <script type="text/javascript" src='static/lib/zepto.touch.js'></script> -->
+	<script type="text/javascript" src='static/lib/underscore.js'></script>
+	<script type="text/javascript" src='static/lib/backbone.js'></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			location.hash = '#'
+		}
+		// 引入接口文件
+		seajs.use('app',function(app){
+			app();
+		})
+	</script>
+</body>
+</html>
